@@ -27,6 +27,7 @@ namespace Syntra.RefAndValueTypes {
 		public struct ValueTemp {
 			public int min;
 			public int max;
+			string a;
 		}
 		public class RefTemp {
 			public int min;

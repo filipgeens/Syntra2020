@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console.RefAndValueTypes", "Console.RefAndValueTypes\Console.RefAndValueTypes.csproj", "{AEBE458B-5960-4304-A55E-411E59EA9923}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-Cursus", "0-Cursus", "{8B667BA0-2FE5-448C-92FB-D54BC564A0A4}"
+	ProjectSection(SolutionItems) = preProject
+		Cursus\BasisCSharp-Types.pptx = Cursus\BasisCSharp-Types.pptx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Types", "1-Types", "{893104D2-D2B3-4408-8DE5-692430CE390E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEBE458B-5960-4304-A55E-411E59EA9923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEBE458B-5960-4304-A55E-411E59EA9923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEBE458B-5960-4304-A55E-411E59EA9923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEBE458B-5960-4304-A55E-411E59EA9923}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AEBE458B-5960-4304-A55E-411E59EA9923} = {893104D2-D2B3-4408-8DE5-692430CE390E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {409F7BD4-C898-4646-9841-91A0E39C8334}
+	EndGlobalSection
+EndGlobal

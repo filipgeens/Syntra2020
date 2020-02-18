@@ -7,12 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console.RefAndValueTypes", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-Cursus", "0-Cursus", "{8B667BA0-2FE5-448C-92FB-D54BC564A0A4}"
 	ProjectSection(SolutionItems) = preProject
+		Cursus\BasisCSharp-Coderen.pptx = Cursus\BasisCSharp-Coderen.pptx
 		Cursus\BasisCSharp-Types.pptx = Cursus\BasisCSharp-Types.pptx
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Types", "1-Types", "{893104D2-D2B3-4408-8DE5-692430CE390E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.TypesLabo", "Console.TypesPartI\Console.TypesLabo.csproj", "{1F2E5097-3A29-46DA-AC85-A1C41344615F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console.TypesLabo", "Console.TypesPartI\Console.TypesLabo.csproj", "{1F2E5097-3A29-46DA-AC85-A1C41344615F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

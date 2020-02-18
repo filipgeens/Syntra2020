@@ -8,7 +8,7 @@ namespace SyntraAB.Types.Labo {
 			if (pos >= 0 && text?.Length > pos + 1) {
 				return text.Remove(pos, 1);
 			}
-			return text;
+			return text; 
 		}
 
 		public string StringNaWaarde(string text, string waarde) {

@@ -25,7 +25,19 @@ namespace CliExample {
 		public CliPlugin Plugin { get => _ext; set => _ext = value; }
 		public CliCommand Input { get => _command; private set => _command = value; }
 
+		public void ShowError(string error) => ShowInColor(error, ConsoleColor.Red, ConsoleColor.Magenta);
 
+		public void ShowInColor(string msg, ConsoleColor col, ConsoleColor optional) {
+			ConsoleColor curColor = Console.ForegroundColor;
+			ConsoleColor curBackCol = Console.BackgroundColor;
+			Console.ForegroundColor = curColor != col ? col : optional;
+			if (Console.BackgroundColor == Console.ForegroundColor) Console.BackgroundColor = Console.BackgroundColor == col ? optional : col;
+			Console.WriteLine();
+			Console.WriteLine(msg);
+			Console.WriteLine();
+			Console.ForegroundColor = curColor;
+			Console.BackgroundColor = curBackCol;
+		}
 
 		public void Run(string[] args) {
 			while (!Exit) {
@@ -46,7 +58,7 @@ namespace CliExample {
 							break;
 						case "print":
 						case "echo":
-							Console.WriteLine(Input.ParameterLine);
+							ShowInColor(Input.ParameterLine, ConsoleColor.Blue, ConsoleColor.Green);
 							break;
 						case "colors":
 							Input.CommandLine = "color list";
@@ -75,8 +87,12 @@ namespace CliExample {
 							}
 							break;
 						default:
+							bool wrongCommand = true;
 							if (Plugin != null) {
-								Plugin.Execute(this, Input);
+								wrongCommand = Plugin.Execute(this, Input) == false;
+							}
+							if (wrongCommand) {
+								ShowError($"Het commando '{Input.CommandLine}' is niet gekend");
 							}
 							break;
 					}

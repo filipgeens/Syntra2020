@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-Cursus", "0-Cursus", "{8B667BA0-2FE5-448C-92FB-D54BC564A0A4}"
 	ProjectSection(SolutionItems) = preProject
 		Cursus\BasisCSharp-Coderen.pptx = Cursus\BasisCSharp-Coderen.pptx
+		Cursus\BasisCSharp-OO.pptx = Cursus\BasisCSharp-OO.pptx
 		Cursus\BasisCSharp-Types.pptx = Cursus\BasisCSharp-Types.pptx
 	EndProjectSection
 EndProject
@@ -15,7 +16,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Types", "1-Types", "{8931
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console.TypesLabo", "Console.TypesPartI\Console.TypesLabo.csproj", "{1F2E5097-3A29-46DA-AC85-A1C41344615F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weerstation", "Weerstation\Weerstation.csproj", "{D2D71DAF-C240-465D-9515-FAE55F3CB03D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weerstation", "Weerstation\Weerstation.csproj", "{D2D71DAF-C240-465D-9515-FAE55F3CB03D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CliExample", "CliExample\CliExample.csproj", "{B2B94C67-3866-45EB-9CB9-B68A052B34DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{331FA6F9-7152-4C14-8F29-07AD1E7ED54C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionPerf", "ExceptionPerformance\ExceptionPerf.csproj", "{52E9E93B-2670-4ACB-A0F7-31681CAC803E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +42,14 @@ Global
 		{D2D71DAF-C240-465D-9515-FAE55F3CB03D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2D71DAF-C240-465D-9515-FAE55F3CB03D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2D71DAF-C240-465D-9515-FAE55F3CB03D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2B94C67-3866-45EB-9CB9-B68A052B34DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B94C67-3866-45EB-9CB9-B68A052B34DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B94C67-3866-45EB-9CB9-B68A052B34DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B94C67-3866-45EB-9CB9-B68A052B34DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52E9E93B-2670-4ACB-A0F7-31681CAC803E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E9E93B-2670-4ACB-A0F7-31681CAC803E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E9E93B-2670-4ACB-A0F7-31681CAC803E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E9E93B-2670-4ACB-A0F7-31681CAC803E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +58,8 @@ Global
 		{AEBE458B-5960-4304-A55E-411E59EA9923} = {893104D2-D2B3-4408-8DE5-692430CE390E}
 		{1F2E5097-3A29-46DA-AC85-A1C41344615F} = {893104D2-D2B3-4408-8DE5-692430CE390E}
 		{D2D71DAF-C240-465D-9515-FAE55F3CB03D} = {893104D2-D2B3-4408-8DE5-692430CE390E}
+		{B2B94C67-3866-45EB-9CB9-B68A052B34DB} = {893104D2-D2B3-4408-8DE5-692430CE390E}
+		{52E9E93B-2670-4ACB-A0F7-31681CAC803E} = {331FA6F9-7152-4C14-8F29-07AD1E7ED54C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {409F7BD4-C898-4646-9841-91A0E39C8334}

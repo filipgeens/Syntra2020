@@ -22,6 +22,15 @@ namespace Werknemersbestand {
 			}
 			return false;
 		}
+		public bool ChangeID(Werknemer wn, string newID) {
+			if (Lijst.ContainsKey(wn.Id) && !Lijst.ContainsKey(newID)) {
+				Lijst.Remove(wn.Id);
+				wn.Id = newID;
+				Lijst.Add(wn.Id,wn);
+				return true;
+			}
+			return false;
+		}
 		public List<Werknemer> ZoekOpNaam(string naam) {
 			List<Werknemer> res = new List<Werknemer>();
 			if (naam?.Length > 0) {

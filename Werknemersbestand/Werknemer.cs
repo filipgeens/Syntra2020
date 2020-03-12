@@ -6,6 +6,7 @@ namespace Werknemersbestand {
 	public class Werknemer {
 		string _id = null;
 		string _voorNaam = "";
+		static string _baas = "";
 		string _achterNaam = "";
 		DateTime _inDienst = DateTime.MinValue;
 		DateTime _uitDienst = DateTime.MaxValue;
@@ -19,9 +20,11 @@ namespace Werknemersbestand {
 		public List<Adres> Adressen { get => _adressen; set => _adressen = value; }
 		public List<Contact> Contacten { get => _contacten; set => _contacten = value; }
 		public bool IsInDienst { get { return UitDienst == DateTime.MaxValue && InDienst > DateTime.MinValue; } }
+
+		public static string Baas { get => _baas; set => _baas = value; }
 		public void OntslaDiePersoon() { UitDienst = DateTime.Now; }
 		public override string ToString() {
-			return $"id:{Id} Voornaam:{VoorNaam} Achternaam {AchterNaam}";
+			return $"id:{Id} Voornaam:{VoorNaam} Achternaam {AchterNaam} Baas:{Baas}";
 		}
 	}
 }

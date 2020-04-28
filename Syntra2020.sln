@@ -28,9 +28,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Werknemersbestand", "Werkne
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Delegates", "Delegates", "{349CA9FD-AD8D-461B-85E2-B1427265F832}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLI.Base", "CLI.Base\CLI.Base.csproj", "{A7098174-D34D-44F7-B6DC-3ABFFA5A5067}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CLI.Base", "CLI.Base\CLI.Base.csproj", "{A7098174-D34D-44F7-B6DC-3ABFFA5A5067}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Werknemers2", "Werknemers2\Werknemers2.csproj", "{5F84E5A5-EAF5-4851-B353-C495C0F6BB4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Werknemers2", "Werknemers2\Werknemers2.csproj", "{5F84E5A5-EAF5-4851-B353-C495C0F6BB4C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PDF", "PDF", "{EE316168-8BB0-44B2-9586-C8CE50186F48}"
+	ProjectSection(SolutionItems) = preProject
+		Cursus\PDF\BasisCSharp-Coderen.pdf = Cursus\PDF\BasisCSharp-Coderen.pdf
+		Cursus\PDF\BasisCSharp-OO.pdf = Cursus\PDF\BasisCSharp-OO.pdf
+		Cursus\PDF\BasisCSharp-Types.pdf = Cursus\PDF\BasisCSharp-Types.pdf
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -84,6 +91,7 @@ Global
 		{349CA9FD-AD8D-461B-85E2-B1427265F832} = {893104D2-D2B3-4408-8DE5-692430CE390E}
 		{A7098174-D34D-44F7-B6DC-3ABFFA5A5067} = {349CA9FD-AD8D-461B-85E2-B1427265F832}
 		{5F84E5A5-EAF5-4851-B353-C495C0F6BB4C} = {349CA9FD-AD8D-461B-85E2-B1427265F832}
+		{EE316168-8BB0-44B2-9586-C8CE50186F48} = {8B667BA0-2FE5-448C-92FB-D54BC564A0A4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {409F7BD4-C898-4646-9841-91A0E39C8334}

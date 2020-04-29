@@ -39,6 +39,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PDF", "PDF", "{EE316168-8BB
 		Cursus\PDF\BasisCSharp-Types.pdf = Cursus\PDF\BasisCSharp-Types.pdf
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-OO", "2-OO", "{2F343B09-AC05-404D-9F3D-A61D6BC2BD67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Overerving", "Overerving\Overerving.csproj", "{0F095C61-A72C-4A30-930B-557518D543B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +81,10 @@ Global
 		{5F84E5A5-EAF5-4851-B353-C495C0F6BB4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F84E5A5-EAF5-4851-B353-C495C0F6BB4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F84E5A5-EAF5-4851-B353-C495C0F6BB4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F095C61-A72C-4A30-930B-557518D543B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F095C61-A72C-4A30-930B-557518D543B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F095C61-A72C-4A30-930B-557518D543B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F095C61-A72C-4A30-930B-557518D543B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +100,7 @@ Global
 		{A7098174-D34D-44F7-B6DC-3ABFFA5A5067} = {349CA9FD-AD8D-461B-85E2-B1427265F832}
 		{5F84E5A5-EAF5-4851-B353-C495C0F6BB4C} = {349CA9FD-AD8D-461B-85E2-B1427265F832}
 		{EE316168-8BB0-44B2-9586-C8CE50186F48} = {8B667BA0-2FE5-448C-92FB-D54BC564A0A4}
+		{0F095C61-A72C-4A30-930B-557518D543B3} = {2F343B09-AC05-404D-9F3D-A61D6BC2BD67}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {409F7BD4-C898-4646-9841-91A0E39C8334}

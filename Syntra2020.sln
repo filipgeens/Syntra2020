@@ -10,6 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-Cursus", "0-Cursus", "{8B
 		Cursus\BasisCSharp-Coderen.pptx = Cursus\BasisCSharp-Coderen.pptx
 		Cursus\BasisCSharp-OO.pptx = Cursus\BasisCSharp-OO.pptx
 		Cursus\BasisCSharp-Types.pptx = Cursus\BasisCSharp-Types.pptx
+		Cursus\CSharp-IO-intro.pptx = Cursus\CSharp-IO-intro.pptx
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Types", "1-Types", "{893104D2-D2B3-4408-8DE5-692430CE390E}"
@@ -41,7 +42,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PDF", "PDF", "{EE316168-8BB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-OO", "2-OO", "{2F343B09-AC05-404D-9F3D-A61D6BC2BD67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Overerving", "Overerving\Overerving.csproj", "{0F095C61-A72C-4A30-930B-557518D543B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Overerving", "Overerving\Overerving.csproj", "{0F095C61-A72C-4A30-930B-557518D543B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{4775145F-4CAA-4A14-866A-5910BC599073}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools", "Tools\Tools.csproj", "{A0671220-413E-46EC-929A-3D3A869109EE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToolTestConsole", "ToolTestConsole\ToolTestConsole.csproj", "{781EE2B2-E52A-4F0C-92FC-E30FC818DD75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +92,14 @@ Global
 		{0F095C61-A72C-4A30-930B-557518D543B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F095C61-A72C-4A30-930B-557518D543B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F095C61-A72C-4A30-930B-557518D543B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0671220-413E-46EC-929A-3D3A869109EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0671220-413E-46EC-929A-3D3A869109EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0671220-413E-46EC-929A-3D3A869109EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0671220-413E-46EC-929A-3D3A869109EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{781EE2B2-E52A-4F0C-92FC-E30FC818DD75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{781EE2B2-E52A-4F0C-92FC-E30FC818DD75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{781EE2B2-E52A-4F0C-92FC-E30FC818DD75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{781EE2B2-E52A-4F0C-92FC-E30FC818DD75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,6 +116,8 @@ Global
 		{5F84E5A5-EAF5-4851-B353-C495C0F6BB4C} = {349CA9FD-AD8D-461B-85E2-B1427265F832}
 		{EE316168-8BB0-44B2-9586-C8CE50186F48} = {8B667BA0-2FE5-448C-92FB-D54BC564A0A4}
 		{0F095C61-A72C-4A30-930B-557518D543B3} = {2F343B09-AC05-404D-9F3D-A61D6BC2BD67}
+		{A0671220-413E-46EC-929A-3D3A869109EE} = {4775145F-4CAA-4A14-866A-5910BC599073}
+		{781EE2B2-E52A-4F0C-92FC-E30FC818DD75} = {4775145F-4CAA-4A14-866A-5910BC599073}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {409F7BD4-C898-4646-9841-91A0E39C8334}

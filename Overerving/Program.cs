@@ -1,5 +1,6 @@
 ﻿using Overerving;
 using System;
+using System.Text.Json;
 
 namespace SyntraAB.Overerving.Test {
 	class Program {
@@ -16,7 +17,6 @@ namespace SyntraAB.Overerving.Test {
 		static int Add(int a, int b) => a + b;
 		static int Multiply(int a, int b) => a * b;
 		static int Subtract(int a, int b) => a - b;
-
 
 
 
@@ -43,7 +43,8 @@ namespace SyntraAB.Overerving.Test {
 			Console.WriteLine($" Multiply numbers : {Calculate(myNumbers, Multiply)}");
 			Console.WriteLine($" Subtract numbers : {Calculate(myNumbers, Subtract)}");
 
+
 			Console.ReadKey();
 		}
 	}
-}
+	}

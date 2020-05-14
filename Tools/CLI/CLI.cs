@@ -26,7 +26,7 @@ namespace SyntraAB.Tools.CLI {
 			Console.BackgroundColor = curBackCol;
 		}
 
-		public void Run(string[] args) {
+		public void Run(string[] args=null) {
 			while (!Exit) {
 				Console.Write(_cursor);
 				Input.CommandLine = Console.ReadLine();

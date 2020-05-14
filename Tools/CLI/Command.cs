@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace SyntraAB.Tools.CLI {
 
@@ -21,7 +23,13 @@ namespace SyntraAB.Tools.CLI {
 
 		public string this[int pos] { get { if (pos >= 0 && pos < Parameters.Count) { return Parameters[pos]; } return string.Empty; } }
 		private void UpdateParameters() {
-			string[] prm = CommandLine.Split(" ");
+			string cmd = CommandLine.Replace('"', '\'');
+			MatchCollection results =Regex.Matches(cmd, @"'[\w -]+'");
+			foreach (Match res in results) {
+				cmd=cmd.Replace(res.Value, res.Value.Replace(' ', '\n'));
+			}
+			string[] prm = cmd.Split(" ");
+			for (int i = 0;i < prm?.Length;i++) { prm[i] = prm[i].Replace('\n', ' ').Trim('\''); }
 			if (prm?.Length > 0) {
 				Command = prm[0]?.ToLower() ?? string.Empty;
 				Parameters.Clear();
@@ -31,5 +39,7 @@ namespace SyntraAB.Tools.CLI {
 				ParameterLine = CommandLine.Replace($"{Command} ", "");
 			}
 		}
+
+		public string GetParameter(int idx, string defaultValue) => Parameters?.Count > idx ? Parameters[idx] : defaultValue;
 	}
 }

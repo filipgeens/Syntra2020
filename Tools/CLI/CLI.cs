@@ -40,6 +40,7 @@ namespace SyntraAB.Tools.CLI {
 							Console.WriteLine("echo");
 							if (Plugins.NotEmpty()) {
 								foreach (var plug in Plugins) {
+									Console.WriteLine();
 									Console.WriteLine($"De functies van plugin '{plug.Name}':");
 									plug.ShowHelp();
 								}

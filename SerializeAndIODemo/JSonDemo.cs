@@ -18,18 +18,33 @@ namespace SerializeAndIODemo {
 		public bool Execute(CLIBase parent, CliCommand input) {
 
 			switch (input.Command) {
-				case "json.demo":
-					if (input.Parameters?.Count >= 4) {
+				case "json.add":
+					if (input.Parameters?.Count >= 2) {
 						_data = new PrivateData() {
 							VoorNaam = input.Parameters[0],
 							AchterNaam = input.Parameters[1],
-							RijksregisterNummer = input.Parameters[2],
-							BankRekeningNummer = input.Parameters[3]
+							RijksregisterNummer = input.GetParameter(2, "---------"),
+							BankRekeningNummer = input.GetParameter(3,"----------"),
 						};
-						_data.Pincode = 1234;
-						_data.PrivateRelaties.AddRange(new string[] { "Annabel", "Lola", "Colette" });
+						if (DateTime.TryParse(input.GetParameter(4, DateTime.MinValue.ToString()), out DateTime bd)) { _data.GeboorteDatum = bd; }
+						if (int.TryParse(input.GetParameter(5, "0000"), out int p)) { _data.Pincode = p; }
+						for(int i=6;i<input.Parameters.Count;i++) {
+							_data.PrivateRelaties.Add(input.Parameters[i]);
+						}						
 						_json = JsonSerializer.Serialize(_data, new JsonSerializerOptions() { WriteIndented = true, IgnoreNullValues = true });
+						goto case "json.print";
+					}
+					break;
+				case "json.print":
+					if (_data != null) {
+						Console.WriteLine("Data object content:");
+						Console.WriteLine(_data);
+						Console.WriteLine();
+					}
+					if (_json?.Length > 0) {
+						Console.WriteLine("Json serialized data:");
 						Console.WriteLine(_json);
+						Console.WriteLine();
 					}
 					break;
 				case "json.save":
@@ -46,13 +61,20 @@ namespace SerializeAndIODemo {
 						_json = File.ReadAllText(BestandsNaam(input));
 						if (_json.NotEmpty()) {
 							_data = JsonSerializer.Deserialize<PrivateData>(_json);
-							if (_data != null) {
-								Console.WriteLine(_data);
-							}
+							goto case "json.print";
 						}
 					}
 					break;
-						default:
+				case "json.list":
+					string dir = input.GetParameter(0, Directory.GetCurrentDirectory());
+					if (Directory.Exists(dir)) {
+						Console.WriteLine($"Json files available in directory {dir}");
+						foreach (string filePath in Directory.GetFiles(dir, "*.json") ?? new string[] { "--no files found--" }) {
+							Console.WriteLine(filePath);
+						}
+					}
+					break;
+				default:
 					return false;
 			}
 			return true;
@@ -63,9 +85,22 @@ namespace SerializeAndIODemo {
 			} else if (_bestand.IsEmpty()) {
 				_bestand = $@"{Directory.GetCurrentDirectory().TrimEnd('\\')}\{Path.GetRandomFileName()}";
 			}
+			if (Path.GetExtension(_bestand)?.ToLower() != ".json") { _bestand += ".json"; }
 			return _bestand;
 		}
 		public void ShowHelp() {
+			StringBuilder showHelp = new StringBuilder();
+			showHelp.AppendLine(" Json commando's:");
+			showHelp.AppendLine("\t json.load <path>  \t Laad het bestand <path> uit een json file");
+			showHelp.AppendLine("\t json.add <voornaam> <achternaam> <rijksregister> <bankrekening> <geboortedatum> <pincode> <relaties>+"  );
+			showHelp.AppendLine("\t\t geboortedatum in formaat dd/ mm / yyyy");
+			showHelp.AppendLine("\t\t <relaties> onbeperkte ingave");
+			showHelp.AppendLine("\t\t Indien een naam spaties bevat, gebruik ' ' ");
+			showHelp.AppendLine("\t json.save <path>  \t Sla het bestand op als <path> ");
+			showHelp.AppendLine("\t json.print        \t Druk de huidige informatie af");
+			showHelp.AppendLine("\t json.list <dir>   \t Geef alle json files weer in de map <dir>");
+			showHelp.AppendLine();
+			Console.WriteLine(showHelp.ToString());
 		}
 	}
 }

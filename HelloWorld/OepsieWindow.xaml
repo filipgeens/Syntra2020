@@ -1,0 +1,18 @@
+﻿<Window x:Class="HelloWorld.OepsieWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HelloWorld"
+        mc:Ignorable="d"
+        Title="OepsieWindow" Height="395" Width="762" ShowInTaskbar="False">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/ls2-drm.jpg"/>
+        </Grid.Background>
+        <Label Content="Hallo iedereen!!!" Margin="0,30,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontFamily="Arial Black" FontSize="52"/>
+        <Button x:Name="CloseButton" Content="Cancel" HorizontalAlignment="Right" Margin="0,0,17,28" VerticalAlignment="Bottom" Width="102" Height="34" Click="CloseButton_Click" Background="#FFF55121"/>
+        <Button x:Name="OkButton" Content="OK" HorizontalAlignment="Right" Margin="0,0,138,28" VerticalAlignment="Bottom" Width="102" Height="34" Click="OkButton_Click" Background="#FF4C6E4C"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,17 @@
+﻿<Window x:Class="HelloWorld.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HelloWorld"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Opacity="0.9">
+        <Button Content="Hallo!" x:Name="HalloButton" HorizontalAlignment="Left" Margin="650,0,0,0" VerticalAlignment="Center" Height="26" Width="85" Panel.ZIndex="20" Cursor="Cross"/>
+        <Button Content="Oepsie" x:Name="OepsieButton" Margin="0,47,65,0" Foreground="DarkBlue" Opacity="0.95" Visibility="Visible" FontFamily="Comic Sans MS" FontSize="25" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Top" Height="101" Panel.ZIndex="25" Cursor="Hand" Click="OepsieButton_Click" MouseMove="OepsieButton_MouseMove" MouseLeave="OepsieButton_MouseLeave">
+            <Button.Background>
+                <ImageBrush ImageSource="/thumbs-up-animated-29.gif"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>

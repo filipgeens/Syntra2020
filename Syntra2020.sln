@@ -10,7 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-Cursus", "0-Cursus", "{8B
 		Cursus\BasisCSharp-Coderen.pptx = Cursus\BasisCSharp-Coderen.pptx
 		Cursus\BasisCSharp-OO.pptx = Cursus\BasisCSharp-OO.pptx
 		Cursus\BasisCSharp-Types.pptx = Cursus\BasisCSharp-Types.pptx
+		Cursus\C# Developer - jaar 1.pptx = Cursus\C# Developer - jaar 1.pptx
 		Cursus\CSharp-IO-intro.pptx = Cursus\CSharp-IO-intro.pptx
+		Cursus\CSharp-WPF.pptx = Cursus\CSharp-WPF.pptx
 		Cursus\Post Corona planning.pdf = Cursus\Post Corona planning.pdf
 	EndProjectSection
 EndProject
@@ -53,7 +55,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToolTestConsole", "ToolTest
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-IO", "3-IO", "{B47B801A-C7AE-4A71-B10F-20E2CC3CA565}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializeAndIODemo", "SerializeAndIODemo\SerializeAndIODemo.csproj", "{676DFDFB-1564-48AF-A16E-2EB987008926}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerializeAndIODemo", "SerializeAndIODemo\SerializeAndIODemo.csproj", "{676DFDFB-1564-48AF-A16E-2EB987008926}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-WPF", "4-WPF", "{D32DD21F-829F-43EC-B8A7-0DEF410BA90A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

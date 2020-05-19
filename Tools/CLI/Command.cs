@@ -24,7 +24,7 @@ namespace SyntraAB.Tools.CLI {
 		public string this[int pos] { get { if (pos >= 0 && pos < Parameters.Count) { return Parameters[pos]; } return string.Empty; } }
 		private void UpdateParameters() {
 			string cmd = CommandLine.Replace('"', '\'');
-			MatchCollection results =Regex.Matches(cmd, @"'[\w -]+'");
+			MatchCollection results =Regex.Matches(cmd, @"'[\.\w -]+'");
 			foreach (Match res in results) {
 				cmd=cmd.Replace(res.Value, res.Value.Replace(' ', '\n'));
 			}

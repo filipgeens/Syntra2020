@@ -61,7 +61,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-WPF", "4-WPF", "{D32DD21F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWorld", "HelloWorld\HelloWorld.csproj", "{91F424FA-6F4C-4603-B267-BF579376BB55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfLayoutDemo", "WpfLayoutDemo\WpfLayoutDemo.csproj", "{2FB33724-2DE9-44E8-A4E1-6B6AF84D8E2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfLayoutDemo", "WpfLayoutDemo\WpfLayoutDemo.csproj", "{2FB33724-2DE9-44E8-A4E1-6B6AF84D8E2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDataBindingDemo", "WpfDataBindingDemo\WpfDataBindingDemo.csproj", "{4688EB89-C4E9-4FB6-8711-FE1415E4A61B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -125,6 +127,10 @@ Global
 		{2FB33724-2DE9-44E8-A4E1-6B6AF84D8E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FB33724-2DE9-44E8-A4E1-6B6AF84D8E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FB33724-2DE9-44E8-A4E1-6B6AF84D8E2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4688EB89-C4E9-4FB6-8711-FE1415E4A61B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4688EB89-C4E9-4FB6-8711-FE1415E4A61B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4688EB89-C4E9-4FB6-8711-FE1415E4A61B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4688EB89-C4E9-4FB6-8711-FE1415E4A61B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -146,6 +152,7 @@ Global
 		{676DFDFB-1564-48AF-A16E-2EB987008926} = {B47B801A-C7AE-4A71-B10F-20E2CC3CA565}
 		{91F424FA-6F4C-4603-B267-BF579376BB55} = {D32DD21F-829F-43EC-B8A7-0DEF410BA90A}
 		{2FB33724-2DE9-44E8-A4E1-6B6AF84D8E2B} = {D32DD21F-829F-43EC-B8A7-0DEF410BA90A}
+		{4688EB89-C4E9-4FB6-8711-FE1415E4A61B} = {D32DD21F-829F-43EC-B8A7-0DEF410BA90A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {409F7BD4-C898-4646-9841-91A0E39C8334}

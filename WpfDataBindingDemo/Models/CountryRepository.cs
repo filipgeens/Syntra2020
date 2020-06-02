@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using SyntraAB.Tools.Extensions;
 
 namespace WpfDataBindingDemo.Models {
 
@@ -9,7 +10,13 @@ namespace WpfDataBindingDemo.Models {
 		public string LastError { get; protected set; } = "";
 		public List<Country> Members { get; set; } = new List<Country>();
 		public int Count { get => Members?.Count > 0 ? Members.Count : 0; }
-
+		public bool FillWithInitialData() {
+			string data = GetType().GetEmbeddedResource("Countries.json");
+			if (data.NotEmpty()) {
+				return Import(data);
+			}
+			return false;
+		}
 		public bool Import(string json) {
 			try {
 				var data = JsonSerializer.Deserialize<List<Country>>(json);

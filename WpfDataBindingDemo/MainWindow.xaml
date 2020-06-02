@@ -27,6 +27,7 @@
         <TextBox x:Name="FontSizeEdit" HorizontalContentAlignment="Center" Grid.Column="3" HorizontalAlignment="Center" Margin="0,39,0,0" Grid.Row="1" Text="{Binding ElementName=FontSlider,Path=Value,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" PreviewTextInput="FontSizeEdit_PreviewTextInput"/>
         <DataGrid x:Name="CountryGrid" SelectionMode="Single" SelectedItem="{Binding CurrentCountry}" Grid.Column="1" ItemsSource="{Binding Countries}"  FontSize="{Binding ElementName=FontSlider, Path=Value}" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,113,0,0" Grid.RowSpan="3"/>
         <ListBox x:Name="CountryList" ItemsSource="{Binding CurrentCountry.Languages}" FontSize="{Binding ElementName=FontSlider, Path=Value}"  Grid.Column="3" Grid.Row="2" Margin="5,107,0,0" Grid.RowSpan="2"/>
+        <Rectangle Grid.Row="0" Grid.Column="0"  Stroke="Black" VerticalAlignment="Stretch" Fill="#FF360A0A" MouseDown="Rectangle_MouseDown" />
 
     </Grid>
 </Window>

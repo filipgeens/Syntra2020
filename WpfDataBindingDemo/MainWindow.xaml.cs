@@ -52,5 +52,11 @@ namespace WpfDataBindingDemo {
 				ViewModel.ExportToFile(saveDlg.FileName);
 			}
 		}
-	}
+
+    private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e) {
+			if (e.ClickCount > 3) {
+				ViewModel.FillWithInitialData();
+			}
+    }
+  }
 }

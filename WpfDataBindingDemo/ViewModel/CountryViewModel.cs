@@ -48,7 +48,13 @@ namespace WpfDataBindingDemo.ViewModel {
 			}
 			return false;
 		}
-		protected void RaisePropertyChanged(string property) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+
+    internal void FillWithInitialData() {
+			Repository.FillWithInitialData();
+			ResetCountryList();
+    }
+
+    protected void RaisePropertyChanged(string property) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
 		public  bool Import(string json) {
 			var ok=Repository.Import(json);
 			ResetCountryList();

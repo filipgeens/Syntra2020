@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfDataBindingDemo.Dialogs;
 using WpfDataBindingDemo.ViewModel;
 
 namespace WpfDataBindingDemo {
@@ -27,10 +29,13 @@ namespace WpfDataBindingDemo {
 
 		public MainWindow() {
 			InitializeComponent();
-			DataContext = ViewModel;
+			DataContext = ViewModel;      
 		}
-
-		private void FontSizeEdit_PreviewTextInput(object sender, TextCompositionEventArgs e) {
+    protected override void OnClosing(CancelEventArgs e) {
+			ViewModel?.Repository?.SaveData();
+      base.OnClosing(e);
+    }
+    private void FontSizeEdit_PreviewTextInput(object sender, TextCompositionEventArgs e) {
 			e.Handled = !IsNumber(e.Text);
 		}
 		public bool IsNumber(string txt) => int.TryParse(txt, out int i);
@@ -55,7 +60,6 @@ namespace WpfDataBindingDemo {
 
     private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e) {
 			if (e.ClickCount > 3) {
-				ViewModel.FillWithInitialData();
 			}
     }
 
@@ -63,6 +67,13 @@ namespace WpfDataBindingDemo {
 			ViewModel.FilterResult();
     }
 
+    private void InfoButton_Click(object sender, RoutedEventArgs e) {
+			InfoDialog dlg = new InfoDialog(ViewModel) { Owner = this };
+			if (dlg.ShowDialog() == true) { }
+    }
 
+    private void StandardDataButton_Click(object sender, RoutedEventArgs e) {
+			ViewModel.FillWithInitialData();
+		}
   }
 }

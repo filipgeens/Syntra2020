@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\cancel.png" />
+    <None Remove="Images\check.png" />
+    <None Remove="Images\dumbledore.png" />
+    <None Remove="Images\info.png" />
+    <None Remove="Images\magic_wand.png" />
+    <None Remove="Images\round_add.png" />
+    <None Remove="Images\round_remove.png" />
+    <None Remove="Images\warning.png" />
     <None Remove="Search %281%29.png" />
   </ItemGroup>
 
@@ -20,7 +28,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\cancel.png" />
+    <Resource Include="Images\check.png" />
+    <Resource Include="Images\dumbledore.png" />
+    <Resource Include="Images\info.png" />
+    <Resource Include="Images\magic_wand.png" />
+    <Resource Include="Images\round_add.png" />
+    <Resource Include="Images\round_remove.png" />
     <Resource Include="Images\Search.png" />
+    <Resource Include="Images\warning.png" />
   </ItemGroup>
 
 </Project>

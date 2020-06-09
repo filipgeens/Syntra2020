@@ -7,6 +7,10 @@ using  Syntra.Data.Models;
 using System.Linq;
 using System.IO;
 using Syntra.Data.Models;
+using System.Windows.Media.Imaging;
+using System.Runtime.CompilerServices;
+using System.Windows.Media;
+using System.Windows;
 
 namespace WpfDataBindingDemo.ViewModel {
 	public class CountryViewModel :INotifyPropertyChanged {
@@ -40,9 +44,13 @@ namespace WpfDataBindingDemo.ViewModel {
 			set => Repository.Members = value.ToList();
 		}
 		public Country CurrentCountry { get => _currentCountry; set { _currentCountry = value; RaisePropertyChanged("CurrentCountry"); } }
-		#endregion Properties
-		#region Methods
-		public void ResetCountryList() {
+
+		public Visibility FillButtonVisible { get => Countries?.Count > 0 ? Visibility.Hidden : Visibility.Visible; set { } }
+
+		public BitmapImage SelectedImage { get => selectedImage; set { selectedImage = value; RaisePropertyChanged(); } }
+    #endregion Properties
+    #region Methods
+    public void ResetCountryList() {
 			Countries.Clear();
 			foreach (var country in Repository.Members) { Countries.Add(country); }		
 		}
@@ -65,9 +73,10 @@ namespace WpfDataBindingDemo.ViewModel {
     internal void FillWithInitialData() {
 			Repository.FillWithInitialData();
 			ResetCountryList();
+			RaisePropertyChanged("FillButtonVisible");
     }
 
-    protected void RaisePropertyChanged(string property) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+    protected void RaisePropertyChanged([CallerMemberName] string property="") => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
 		public  bool Import(string json) {
 			var ok=Repository.Import(json);
 			ResetCountryList();
@@ -90,6 +99,25 @@ namespace WpfDataBindingDemo.ViewModel {
 			} catch { }
 			return false;
 		}
-		#endregion Methods      
-	}
+
+    private BitmapImage selectedImage = null;
+
+    public BitmapImage TryLoadImage() {
+			if (CurrentCountry.FlagData?.Length > 0) {
+				MemoryStream stream = new MemoryStream(System.Convert.FromBase64String(CurrentCountry.FlagData));
+				BitmapImage image = new BitmapImage();
+				image.BeginInit();
+				image.StreamSource = stream;
+				image.EndInit();
+				return image;
+			}
+			return null;
+		}
+		public Stretch ImageStrechMode { get=>Enum.Parse<Stretch>(SelectedImageStrechMode); set { SelectedImageStrechMode = value.ToString(); } }
+
+    public string SelectedImageStrechMode { get => _selectedImageStrechMode; set { _selectedImageStrechMode = value; RaisePropertyChanged(); RaisePropertyChanged("ImageStrechMode"); } }
+
+    private string _selectedImageStrechMode = Stretch.Uniform.ToString();
+    #endregion Methods      
+  }
 }

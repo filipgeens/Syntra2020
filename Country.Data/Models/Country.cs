@@ -33,5 +33,7 @@ namespace Syntra.Data.Models {
 		public List<string> Languages { get; set; } = new List<string>();
 		[JsonPropertyName("temperature")]
 		public double? AvarageTemperature { get; set; }
+		[JsonPropertyName("Flag")]
+		public string FlagData { get; set; }
 	}
 }

@@ -3,10 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using SyntraAB.Tools.Extensions;
+using System.IO;
 
 namespace Syntra.Data.Models {
 
 	public class CountryRepository {
+		public const string DataFile = "Country.Data";
 		public string LastError { get; protected set; } = "";
 		public List<Country> Members { get; set; } = new List<Country>();
 		public int Count { get => Members?.Count > 0 ? Members.Count : 0; }
@@ -17,6 +19,37 @@ namespace Syntra.Data.Models {
 			}
 			return false;
 		}
+		public CountryRepository() {
+			LoadData();
+		}
+
+		public string StandardAppDir {
+			get {
+				string dir = $@"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData).TrimEnd('\\')}\SyntraAB";
+				if (!Directory.Exists(dir)) {
+					Directory.CreateDirectory(dir);
+				}
+				return dir;
+			}
+    }
+		public string DataFilePath => $@"{StandardAppDir}\{DataFile}";
+		public void LoadData() {
+			if (File.Exists(DataFilePath)) {
+				Import(File.ReadAllText(DataFilePath));
+			}
+		}
+
+		public bool SaveData() {
+			string json = Export();
+			if (json?.Length > 0) {
+				try {
+					File.WriteAllText(DataFilePath, json);
+					return true;
+				} catch { }
+			}
+			return false;
+		}
+
 		public bool Import(string json) {
 			try {
 				var data = JsonSerializer.Deserialize<List<Country>>(json);

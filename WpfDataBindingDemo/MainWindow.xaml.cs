@@ -58,5 +58,11 @@ namespace WpfDataBindingDemo {
 				ViewModel.FillWithInitialData();
 			}
     }
+
+    private void SearchButton_Click(object sender, RoutedEventArgs e) {
+			ViewModel.FilterResult();
+    }
+
+
   }
 }

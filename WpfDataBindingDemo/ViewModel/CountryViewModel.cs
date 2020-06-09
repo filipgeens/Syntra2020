@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
-using WpfDataBindingDemo.Models;
+using  Syntra.Data.Models;
 using System.Linq;
 using System.IO;
+using Syntra.Data.Models;
 
 namespace WpfDataBindingDemo.ViewModel {
 	public class CountryViewModel :INotifyPropertyChanged {
@@ -27,6 +28,10 @@ namespace WpfDataBindingDemo.ViewModel {
 		#region Constructors
 		#endregion Constructors
 		#region Properties
+		public string SearchText { get; set; } = "";
+		public bool UseCase { get; set; } = true;
+		public bool UseReverse { get; set; } = false;
+		public int MaxResults { get; set; } = 0;
 		public CountryRepository Repository { get { _repo ??= new CountryRepository(); return _repo; } set => _repo = value; }
 		public ObservableCollection<Country> Countries {
 			get {
@@ -47,6 +52,14 @@ namespace WpfDataBindingDemo.ViewModel {
 				return true;
 			}
 			return false;
+		}
+
+    internal void FilterResult() {
+			Countries.Clear();
+			List<Country> result=Repository.FindCapital(SearchText,UseCase,UseReverse,MaxResults);
+			foreach(var c in result) {
+				Countries.Add(c);
+			}			
 		}
 
     internal void FillWithInitialData() {

@@ -28,6 +28,15 @@
         <DataGrid x:Name="CountryGrid" SelectionMode="Single" SelectedItem="{Binding CurrentCountry}" Grid.Column="1" ItemsSource="{Binding Countries}"  FontSize="{Binding ElementName=FontSlider, Path=Value}" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,113,0,0" Grid.RowSpan="3"/>
         <ListBox x:Name="CountryList" ItemsSource="{Binding CurrentCountry.Languages}" FontSize="{Binding ElementName=FontSlider, Path=Value}"  Grid.Column="3" Grid.Row="2" Margin="5,107,0,0" Grid.RowSpan="2"/>
         <Rectangle Grid.Row="0" Grid.Column="0"  Stroke="Black" VerticalAlignment="Stretch" Fill="#FF360A0A" MouseDown="Rectangle_MouseDown" />
-
+        <TextBox Grid.Column="1" Margin="29,30,74,0" Grid.Row="1" Text="{Binding SearchText,Mode=OneWayToSource}" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button x:Name="SearchButton" Grid.Column="1" ToolTip="Zoek in de landen" HorizontalAlignment="right" Margin="0,20,10,0" Grid.Row="1" VerticalAlignment="Top" Width="40" Height="40" Click="SearchButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Search.png"/>
+            </Button.Background>
+        </Button>
+        <CheckBox Content="Hoofdlettergevoelig" IsChecked="{Binding UseCase}" Grid.Column="1" FontSize="{Binding ElementName=FontSlider, Path=Value}" HorizontalAlignment="Left" Margin="29,64,0,0" Grid.Row="1" VerticalAlignment="Top" Width="215" Foreground="#FFF1EFEF"/>
+        <CheckBox Content="Keer dit eens om" IsChecked="{Binding UseReverse}" Grid.Column="1" FontSize="{Binding ElementName=FontSlider, Path=Value}" HorizontalAlignment="Left" Margin="29,86,0,0" Grid.Row="1" VerticalAlignment="Top" Width="215" Foreground="#FFF1EFEF"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="462,83,0,0" Grid.Row="1" Text="{Binding MaxResults}" TextWrapping="Wrap" VerticalAlignment="Top" Width="51"/>
+        <Label Content="Maximaal aantal resultaten" Grid.Column="1" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="194,79,0,0" Grid.Row="1" VerticalAlignment="Top" Width="262" Foreground="WhiteSmoke"/>
     </Grid>
 </Window>

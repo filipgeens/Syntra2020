@@ -113,6 +113,17 @@ namespace WpfDataBindingDemo.ViewModel {
 			}
 			return null;
 		}
+		public string SaveImageAsB64(BitmapImage src, BitmapEncoder encoder = null) => src != null ? System.Convert.ToBase64String(SaveImage(src, encoder)) : null;
+		public byte[] SaveImage(BitmapImage src, BitmapEncoder encoder=null) {
+			if (src != null) {
+				encoder ??= new PngBitmapEncoder();
+				using MemoryStream ms = new MemoryStream();
+				encoder.Frames.Add(BitmapFrame.Create(src));
+				encoder.Save(ms);
+				return ms.ToArray();
+			}
+			return null;
+		}
 		public Stretch ImageStrechMode { get=>Enum.Parse<Stretch>(SelectedImageStrechMode); set { SelectedImageStrechMode = value.ToString(); } }
 
     public string SelectedImageStrechMode { get => _selectedImageStrechMode; set { _selectedImageStrechMode = value; RaisePropertyChanged(); RaisePropertyChanged("ImageStrechMode"); } }

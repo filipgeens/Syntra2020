@@ -29,7 +29,7 @@ namespace WpfDataBindingDemo {
 
 		public MainWindow() {
 			InitializeComponent();
-			DataContext = ViewModel;      
+			DataContext = ViewModel;
 		}
     protected override void OnClosing(CancelEventArgs e) {
 			ViewModel?.Repository?.SaveData();
@@ -75,5 +75,7 @@ namespace WpfDataBindingDemo {
     private void StandardDataButton_Click(object sender, RoutedEventArgs e) {
 			ViewModel.FillWithInitialData();
 		}
+
+  
   }
 }

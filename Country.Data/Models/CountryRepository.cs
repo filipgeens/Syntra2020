@@ -71,11 +71,14 @@ namespace Syntra.Data.Models {
 								item.Currency = ctry.Currency?.Length > 0 ? ctry.Currency : item.Currency;
 								item.Languages = ctry.Languages?.Count > 0 ? ctry.Languages.ToList() : item.Languages;
 								item.AvarageTemperature = ctry.AvarageTemperature > 0 ? ctry.AvarageTemperature : item.AvarageTemperature;
+								item.Abbreviation = ctry.Abbreviation?.Length > 0 ? ctry.Abbreviation : item.Abbreviation;
+								item.FlagData = ctry.FlagData?.Length > 0 ? ctry.FlagData : item.FlagData;
 							} else {
 								Members.Add(ctry);
 							}
 						}
 					} else Members.AddRange(data);
+					return Members?.Count > 0;
 				}
 			} catch (Exception ex) { LastError = ex.ToString(); }
 			return false;

@@ -10,7 +10,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40"/>
             <ColumnDefinition Width="606*"/>
-            <ColumnDefinition Width="37*"/>
+            <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="128*"/>
             <ColumnDefinition Width="5"/>
         </Grid.ColumnDefinitions>
@@ -21,11 +21,57 @@
             <RowDefinition Height="169*"/>
             <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
-        <Slider x:Name="FontSlider" IsSnapToTickEnabled="True" Grid.Column="2" Margin="37,0,0,0" Grid.Row="1" VerticalAlignment="Top" Maximum="22" Minimum="1" SmallChange="1" TickPlacement="BottomRight" Grid.ColumnSpan="2" Foreground="#FF3F3F44" Value="11"/>
+        <Slider x:Name="FontSlider" IsSnapToTickEnabled="True" Grid.Column="2" Value="{Binding StandardFontSize}" Margin="37,0,0,0" Grid.Row="1" VerticalAlignment="Top" Maximum="22" Minimum="1" SmallChange="1" TickPlacement="BottomRight" Grid.ColumnSpan="2" Foreground="#FF3F3F44"/>
         <Button x:Name="ImportButton" Content="Import" Grid.Column="3" HorizontalAlignment="Stretch" FontSize="{Binding ElementName=FontSlider, Path=Value}" Margin="10,10,10,0" Grid.Row="2" VerticalAlignment="Top" Height="35" Foreground="#FFE29B80" Background="#FF21211E" BorderBrush="#FF613737" Click="ImportButton_Click"/>
         <Button x:Name="ExportButton" Content="Export" Grid.Column="3" FontSize="{Binding ElementName=FontSlider, Path=Value}" Margin="10,54,10,0" Grid.Row="2" VerticalAlignment="Top"  Height="35" Foreground="#FFE29B80" Background="#FF21211E" BorderBrush="#FF613737" Click="ExportButton_Click"/>
         <TextBox x:Name="FontSizeEdit" HorizontalContentAlignment="Center" Grid.Column="3" HorizontalAlignment="Left" Margin="14,39,0,0" Grid.Row="1" Text="{Binding ElementName=FontSlider,Path=Value,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" PreviewTextInput="FontSizeEdit_PreviewTextInput" RenderTransformOrigin="0.487,0.045"/>
-        <DataGrid x:Name="CountryGrid" SelectionMode="Single" SelectedItem="{Binding CurrentCountry}" Grid.Column="1" ItemsSource="{Binding Countries}"  FontSize="{Binding ElementName=FontSlider, Path=Value}" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.RowSpan="2"/>
+        <DataGrid x:Name="CountryGrid" AutoGenerateColumns="False" SelectionMode="Single" SelectedItem="{Binding CurrentCountry}" Grid.Column="1" ItemsSource="{Binding Countries}"  FontSize="{Binding ElementName=FontSlider, Path=Value}" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.RowSpan="2">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Flag}" Width="40" Height="20"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Iso" Binding="{Binding IsoCode}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Naam" Binding="{Binding Name}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Hoofdstad" Binding="{Binding Capital}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <WrapPanel Background="#FFF5F4CF" Orientation="Horizontal">
+                        <Image Source="{Binding Flag}" Width="160" Height="80"/>
+                        <WrapPanel Orientation="Vertical">
+                            <Label Padding="15" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" Foreground="DarkGreen" Content="{Binding}"/>
+                            <WrapPanel Orientation="Horizontal">
+
+                                <WrapPanel Background="#FFADCFBF" Orientation="Vertical">
+                                    <WrapPanel Orientation="Horizontal">
+                                        <Label Content="Munteenheid :"/>
+                                        <Label Content="{Binding Currency}"/>
+                                    </WrapPanel>
+                                    <WrapPanel Orientation="Horizontal">
+                                        <Label Content="Hoofdstad :"/>
+                                        <Label Content="{Binding Capital}"/>
+                                    </WrapPanel>
+                                </WrapPanel>
+                                <WrapPanel Orientation="Vertical">
+                                    <WrapPanel Orientation="Horizontal">
+                                        <Label Content="Nationaal gerecht :"/>
+                                        <Label Content="{Binding NationalDish}"/>
+                                    </WrapPanel>
+                                    <WrapPanel Orientation="Horizontal">
+                                        <Label Content="Inwoners :"/>
+                                        <Label Content="{Binding Population}"/>
+                                    </WrapPanel>
+                                </WrapPanel>
+                            </WrapPanel>
+                        </WrapPanel>
+                    </WrapPanel>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
         <ListBox x:Name="CountryList" ItemsSource="{Binding CurrentCountry.Languages}" FontSize="{Binding ElementName=FontSlider, Path=Value}"  Grid.Column="3" Grid.Row="2" Margin="5,107,0,0" Grid.RowSpan="2"/>
         <TextBox Grid.Column="1" Margin="29,30,74,0" Grid.Row="1" Text="{Binding SearchText,Mode=OneWayToSource}" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Button x:Name="SearchButton" Grid.Column="1" ToolTip="Zoek in de landen" HorizontalAlignment="right" Margin="0,20,10,0" Grid.Row="1" VerticalAlignment="Top" Width="40" Height="40" Click="SearchButton_Click">

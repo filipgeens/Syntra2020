@@ -6,13 +6,16 @@ using System.Text;
 using  Syntra.Data.Models;
 using System.Linq;
 using System.IO;
-using Syntra.Data.Models;
 using System.Windows.Media.Imaging;
 using System.Runtime.CompilerServices;
 using System.Windows.Media;
 using System.Windows;
+using WpfDataBindingDemo.Tools;
+using DevExpress.Office;
+using System.DirectoryServices;
 
 namespace WpfDataBindingDemo.ViewModel {
+
 	public class CountryViewModel :INotifyPropertyChanged {
 		#region Info
 		/// Class : CountryViewModel
@@ -24,9 +27,8 @@ namespace WpfDataBindingDemo.ViewModel {
 		#endregion Definitions
 		#region Fields
 		public event PropertyChangedEventHandler PropertyChanged;
-
 		CountryRepository _repo = null;
-		ObservableCollection<Country> _countries = null;
+		ObservableCollection<WpfCountry> _countries = null;
 		Country _currentCountry = null;
 		#endregion Fields
 		#region Constructors
@@ -37,11 +39,11 @@ namespace WpfDataBindingDemo.ViewModel {
 		public bool UseReverse { get; set; } = false;
 		public int MaxResults { get; set; } = 0;
 		public CountryRepository Repository { get { _repo ??= new CountryRepository(); return _repo; } set => _repo = value; }
-		public ObservableCollection<Country> Countries {
+		public ObservableCollection<WpfCountry> Countries {
 			get {
-				_countries ??= new ObservableCollection<Country>(Repository.Members); return _countries;
+				_countries ??= new ObservableCollection<WpfCountry>(Repository.Members.Select(s => new WpfCountry(s)).ToList()); return _countries;
 			}
-			set => Repository.Members = value.ToList();
+			set => Repository.Members = value.Cast<Country>().ToList();
 		}
 		public Country CurrentCountry { get => _currentCountry; set { _currentCountry = value; RaisePropertyChanged("CurrentCountry"); } }
 
@@ -52,7 +54,7 @@ namespace WpfDataBindingDemo.ViewModel {
     #region Methods
     public void ResetCountryList() {
 			Countries.Clear();
-			foreach (var country in Repository.Members) { Countries.Add(country); }		
+			foreach (var country in Repository.Members) { Countries.Add(new WpfCountry(country)); }		
 		}
 		public bool UpdateCountryList() {
 			if (Countries?.Count > 0) {
@@ -61,10 +63,10 @@ namespace WpfDataBindingDemo.ViewModel {
 			}
 			return false;
 		}
-
+		public int StandardFontSize { get; set; } = 12;
     internal void FilterResult() {
 			Countries.Clear();
-			List<Country> result=Repository.FindCapital(SearchText,UseCase,UseReverse,MaxResults);
+			List<WpfCountry> result = Repository.FindCapital(SearchText, UseCase, UseReverse, MaxResults).Select(s => new WpfCountry(s)).ToList();
 			foreach(var c in result) {
 				Countries.Add(c);
 			}			

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json.Serialization;
+using Microsoft.Win32;
 
 namespace Syntra.Data.Models {
 	public class Country {
@@ -37,5 +38,6 @@ namespace Syntra.Data.Models {
 		public string FlagData { get; set; }
 		[JsonPropertyName("abbreviation")]
 		public string Abbreviation { get; set; } = "";
-	}
+		public override string ToString() => Name;
+  }
 }

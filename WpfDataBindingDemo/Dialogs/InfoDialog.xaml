@@ -26,12 +26,23 @@
                 <Label Foreground="AntiqueWhite" FontSize="12" FontWeight="Bold" Padding="5" Content="OK"/>
             </WrapPanel>
         </Button>
-        <TextBlock Grid.Column="1" TextAlignment="Center"  Grid.Row="1" TextWrapping="Wrap" Margin="0,0,0,194" Grid.RowSpan="3" Grid.ColumnSpan="2">
+        <TextBlock Grid.Column="1" TextAlignment="Center" FontSize="{Binding StandardFontSize}"  Grid.Row="1" TextWrapping="Wrap" Margin="0,0,0,194" Grid.RowSpan="3" Grid.ColumnSpan="2">
             <Span FontSize="20" FontWeight="Bold" Foreground="Goldenrod"> <Underline>LandInformatie</Underline> </Span>
         </TextBlock>
         <Image x:Name="FlagImage" Stretch="{Binding ImageStrechMode}" Source="{Binding Path=SelectedImage}" Grid.Column="1" HorizontalAlignment="Stretch"  Grid.Row="2" VerticalAlignment="Stretch"/>
-        <Button Foreground="AntiqueWhite" x:Name="LoadImgButton" Content="Load flag from image" Grid.Column="2" HorizontalAlignment="Left" Margin="47,10,0,0" Grid.Row="2" VerticalAlignment="Top" Background="{x:Null}" Click="LoadImgButton_Click"/>
+        <Button Foreground="AntiqueWhite" x:Name="LoadImgButton" FontSize="{Binding StandardFontSize}" Content="Load flag from image" Grid.Column="2" HorizontalAlignment="Left" Margin="47,10,0,0" Grid.Row="2" VerticalAlignment="Top" Background="{x:Null}" Click="LoadImgButton_Click"/>
         <ComboBox x:Name="StrechModeCombo" SelectedItem="{Binding SelectedImageStrechMode}" Grid.Column="2" HorizontalAlignment="Left" Margin="47,42,0,0" Grid.Row="2" VerticalAlignment="Top" Width="117"/>
+        <ListBox Grid.Column="2" ItemsSource="{Binding Countries}"  FontSize="{Binding StandardFontSize}" Grid.Row="3">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel Orientation="Horizontal">
+                        <Label Content="{Binding Name}" />
+                        <Image Source="{Binding Flag}" Width="35" Height="20"/>
+                    </WrapPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            
+        </ListBox>
 
     </Grid>
 </Window>

@@ -30,6 +30,7 @@ namespace WpfDataBindingDemo.Dialogs {
 
     private void OKButton_Click(object sender, RoutedEventArgs e) {
       DialogResult = true;
+       
 
     }
 

@@ -8,7 +8,7 @@ using System.IO;
 namespace Syntra.Data.Models {
 
 	public class CountryRepository {
-		public const string DataFile = "Country.Data";
+		public const string DataFile = "Country.dat";
 		public string LastError { get; protected set; } = "";
 		public List<Country> Members { get; set; } = new List<Country>();
 		public int Count { get => Members?.Count > 0 ? Members.Count : 0; }

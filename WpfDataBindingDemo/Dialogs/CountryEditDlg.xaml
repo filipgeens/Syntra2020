@@ -1,0 +1,42 @@
+﻿<Window x:Class="WpfDataBindingDemo.Dialogs.CountryEditDlg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfDataBindingDemo.Dialogs"
+        mc:Ignorable="d"
+        Title="Landen Aanpassen" Height="450" Width="500" WindowStartupLocation="CenterOwner"  Background="#FF2B0707" Foreground="#FFEEEEEE">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="154*"/>
+            <ColumnDefinition Width="207*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="CancelButton" Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,100,0" Grid.Row="2" VerticalAlignment="Center" Background="{x:Null}" Click="CancelButton_Click" Height="40" Width="87" >
+            <WrapPanel Orientation="Horizontal">
+                <Image Source="/images/cancel.png"/>
+                <Label Foreground="AntiqueWhite" FontSize="12" FontWeight="Bold" Padding="5" Content="Cancel"/>
+            </WrapPanel>
+        </Button>
+        <Button x:Name="OkButton" Grid.Column="2" HorizontalAlignment="Left" Margin="180,0,0,0" Grid.Row="2" VerticalAlignment="Center" Background="{x:Null}" Click="OkButton_Click" Grid.ColumnSpan="2" Height="40" Width="67"  >
+            <WrapPanel Orientation="Horizontal">
+                <Image Source="/images/check.png"/>
+                <Label Foreground="AntiqueWhite" FontSize="12" FontWeight="Bold" Padding="5" Content="OK"/>
+            </WrapPanel>
+        </Button>
+        <Label Content="Naam" HorizontalContentAlignment="Right" Foreground="AntiqueWhite" FontSize="{Binding StandardFontSize}" Grid.Column="1" HorizontalAlignment="Left" Margin="96,36,0,0" Grid.Row="1" VerticalAlignment="Top" Width="99"/>
+        <Label Content="Hoofdstad" HorizontalContentAlignment="Right" Foreground="AntiqueWhite" FontSize="{Binding StandardFontSize}" Grid.Column="1" HorizontalAlignment="Left" Margin="96,66,0,0" Grid.Row="1" VerticalAlignment="Top" Width="99"/>
+        <Label Content="Inwoners" HorizontalContentAlignment="Right" Foreground="AntiqueWhite" FontSize="{Binding StandardFontSize}" Grid.Column="1" HorizontalAlignment="Left" Margin="96,96,0,0" Grid.Row="1" VerticalAlignment="Top" Width="99"/>
+        <Label Content="Iso Code" HorizontalContentAlignment="Right" Foreground="AntiqueWhite" FontSize="{Binding StandardFontSize}" Grid.Column="1" HorizontalAlignment="Left" Margin="96,126,0,0" Grid.Row="1" VerticalAlignment="Top" Width="99"/>
+        <TextBox Grid.Column="2" FontSize="{Binding StandardFontSize}"  HorizontalAlignment="Left" Margin="10,36,0,0" Grid.Row="1" Text="{Binding Name}" TextWrapping="Wrap" VerticalAlignment="Top" Width="220"/>
+        <TextBox Grid.Column="2" FontSize="{Binding StandardFontSize}"  HorizontalAlignment="Left" Margin="10,66,0,0" Grid.Row="1" Text="{Binding Capital}" TextWrapping="Wrap" VerticalAlignment="Top" Width="220"/>
+        <TextBox Grid.Column="2" FontSize="{Binding StandardFontSize}"  HorizontalAlignment="Left" Margin="10,96,0,0" Grid.Row="1" Text="{Binding Population}" TextWrapping="Wrap" VerticalAlignment="Top" Width="220"/>
+        <TextBox Grid.Column="2" FontSize="{Binding StandardFontSize}"  HorizontalAlignment="Left" Margin="10,126,0,0" Grid.Row="1" Text="{Binding IsoCode}" TextWrapping="Wrap" VerticalAlignment="Top" Width="220"/>
+    </Grid>
+</Window>

@@ -78,7 +78,8 @@ namespace WpfDataBindingDemo.ViewModel {
 			RaisePropertyChanged("FillButtonVisible");
     }
 
-    protected void RaisePropertyChanged([CallerMemberName] string property="") => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+    public void RaisePropertyChanged([CallerMemberName] string property="") => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+		public void UpdateGui() => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(""));
 		public  bool Import(string json) {
 			var ok=Repository.Import(json);
 			ResetCountryList();

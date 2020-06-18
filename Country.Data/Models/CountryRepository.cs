@@ -96,7 +96,15 @@ namespace Syntra.Data.Models {
 			}
 			return new List<Country>();
 		}
-
+		public bool Update(Country ctry) {
+			for(int i=0;i<Members.Count;i++) {
+				if (Members[i].IsoCode == ctry.IsoCode) {
+					Members[i] = ctry;
+					return true;
+				}
+			}
+			return false;
+		}
     public string Export() => JsonSerializer.Serialize(Members, new JsonSerializerOptions() { WriteIndented = true, IgnoreNullValues = true });
 	}
 }

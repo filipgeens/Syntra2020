@@ -76,6 +76,15 @@ namespace WpfDataBindingDemo {
 			ViewModel.FillWithInitialData();
 		}
 
-  
+    private void EditButton_Click(object sender, RoutedEventArgs e) {
+			if (ViewModel.CurrentCountry != null) {
+				CountryEditDlg dlg = new CountryEditDlg(ViewModel) { Owner=this };
+				if (dlg.ShowDialog() == true) {
+          if (ViewModel.Repository.Update(ViewModel.CurrentCountry)) {
+						ViewModel.ResetCountryList();
+					}
+				}
+			}
+    }
   }
 }

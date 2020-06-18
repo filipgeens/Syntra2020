@@ -10,6 +10,7 @@
     <None Remove="Images\cancel.png" />
     <None Remove="Images\check.png" />
     <None Remove="Images\dumbledore.png" />
+    <None Remove="Images\edit-pen.png" />
     <None Remove="Images\info.png" />
     <None Remove="Images\magic_wand.png" />
     <None Remove="Images\round_add.png" />
@@ -31,6 +32,7 @@
     <Resource Include="Images\cancel.png" />
     <Resource Include="Images\check.png" />
     <Resource Include="Images\dumbledore.png" />
+    <Resource Include="Images\edit-pen.png" />
     <Resource Include="Images\info.png" />
     <Resource Include="Images\magic_wand.png" />
     <Resource Include="Images\round_add.png" />

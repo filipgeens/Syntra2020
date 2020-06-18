@@ -95,6 +95,18 @@
                 </StackPanel>
             </Button.ToolTip>
         </Button>
+        <Button x:Name="EditButton"  HorizontalAlignment="Left" Margin="0,50,0,0" Grid.Row="2" VerticalAlignment="Top" Background="{x:Null}" Click="EditButton_Click">
+            <Image Source="/images/edit-pen.png" Height="32" Width="32"/>
+            <Button.ToolTip>
+                <StackPanel Orientation="Vertical">
+                    <Image Source="/images/edit-pen.png" Stretch="None"/>
+                    <TextBlock TextAlignment="Center">
+                        <Span BaselineAlignment="Center" FontSize="20" FontWeight="Black"> Aanpassen die boel ! </Span><LineBreak/>
+                        Hier kan u het geselecteerde land aanpassen
+                    </TextBlock>
+                </StackPanel>
+            </Button.ToolTip>
+        </Button>
         <Button x:Name="StandardDataButton" Visibility="{Binding FillButtonVisible}"  HorizontalAlignment="Left" Margin="0,0,0,0" Grid.Row="3" VerticalAlignment="Bottom" Background="{x:Null}" Click="StandardDataButton_Click">
             <Image Source="/images/magic_wand.png" Height="32" Width="32" />
             <Button.ToolTip>

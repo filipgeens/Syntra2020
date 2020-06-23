@@ -6,6 +6,25 @@
         xmlns:local="clr-namespace:WpfDataBindingDemo.Dialogs"
         mc:Ignorable="d"
         Title="Landen Aanpassen" Height="450" Width="500" WindowStartupLocation="CenterOwner"  Background="#FF2B0707" Foreground="#FFEEEEEE">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="Tomato"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Style.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding ElementName=ReadOnlyCheckbox, Path=IsChecked}" Value="True"/>
+                        <Condition Binding="{Binding ElementName=IsoEdit, Path=Text}" Value=""/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="IsEnabled" Value="False"/>
+
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
@@ -18,6 +37,7 @@
             <RowDefinition Height="100*"/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
+
         <Button x:Name="CancelButton" Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,100,0" Grid.Row="2" VerticalAlignment="Center" Background="{x:Null}" Click="CancelButton_Click" Height="40" Width="87" >
             <WrapPanel Orientation="Horizontal">
                 <Image Source="/images/cancel.png"/>
@@ -34,9 +54,10 @@
         <Label Content="Hoofdstad" HorizontalContentAlignment="Right" Foreground="AntiqueWhite" FontSize="{Binding StandardFontSize}" Grid.Column="1" HorizontalAlignment="Left" Margin="96,66,0,0" Grid.Row="1" VerticalAlignment="Top" Width="99"/>
         <Label Content="Inwoners" HorizontalContentAlignment="Right" Foreground="AntiqueWhite" FontSize="{Binding StandardFontSize}" Grid.Column="1" HorizontalAlignment="Left" Margin="96,96,0,0" Grid.Row="1" VerticalAlignment="Top" Width="99"/>
         <Label Content="Iso Code" HorizontalContentAlignment="Right" Foreground="AntiqueWhite" FontSize="{Binding StandardFontSize}" Grid.Column="1" HorizontalAlignment="Left" Margin="96,126,0,0" Grid.Row="1" VerticalAlignment="Top" Width="99"/>
-        <TextBox Grid.Column="2" FontSize="{Binding StandardFontSize}"  HorizontalAlignment="Left" Margin="10,36,0,0" Grid.Row="1" Text="{Binding Name}" TextWrapping="Wrap" VerticalAlignment="Top" Width="220"/>
-        <TextBox Grid.Column="2" FontSize="{Binding StandardFontSize}"  HorizontalAlignment="Left" Margin="10,66,0,0" Grid.Row="1" Text="{Binding Capital}" TextWrapping="Wrap" VerticalAlignment="Top" Width="220"/>
-        <TextBox Grid.Column="2" FontSize="{Binding StandardFontSize}"  HorizontalAlignment="Left" Margin="10,96,0,0" Grid.Row="1" Text="{Binding Population}" TextWrapping="Wrap" VerticalAlignment="Top" Width="220"/>
-        <TextBox Grid.Column="2" FontSize="{Binding StandardFontSize}"  HorizontalAlignment="Left" Margin="10,126,0,0" Grid.Row="1" Text="{Binding IsoCode}" TextWrapping="Wrap" VerticalAlignment="Top" Width="220"/>
+        <TextBox Grid.Column="2" FontSize="{Binding StandardFontSize}"  HorizontalAlignment="Left" Margin="10,44,0,0" Grid.Row="1" Text="{Binding Name}" TextWrapping="Wrap" VerticalAlignment="Top" Width="220"/>
+        <TextBox Grid.Column="2" FontSize="{Binding StandardFontSize}"  HorizontalAlignment="Left" Margin="10,74,0,0" Grid.Row="1" Text="{Binding Capital}" TextWrapping="Wrap" VerticalAlignment="Top" Width="220"/>
+        <TextBox Grid.Column="2" FontSize="{Binding StandardFontSize}"  HorizontalAlignment="Left" Margin="10,104,0,0" Grid.Row="1" Text="{Binding Population}" TextWrapping="Wrap" VerticalAlignment="Top" Width="220"/>
+        <TextBox x:Name="IsoEdit" Style="{StaticResource BlackTomato}" Grid.Column="2" HorizontalAlignment="Left" Margin="10,134,0,0" Grid.Row="1" Text="{Binding IsoCode}" TextWrapping="Wrap" VerticalAlignment="Top" Width="220"/>
+        <CheckBox x:Name="ReadOnlyCheckbox" Content="Alleen lezen" IsChecked="True" Foreground="WhiteSmoke" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="220"/>
     </Grid>
 </Window>

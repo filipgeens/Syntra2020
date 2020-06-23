@@ -41,4 +41,10 @@
     <Resource Include="Images\warning.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="App.Styles">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
 </Project>

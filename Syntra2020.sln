@@ -14,6 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-Cursus", "0-Cursus", "{8B
 		Cursus\CSharp-IO-intro.pptx = Cursus\CSharp-IO-intro.pptx
 		Cursus\CSharp-LINQ.pptx = Cursus\CSharp-LINQ.pptx
 		Cursus\CSharp-WPF.pptx = Cursus\CSharp-WPF.pptx
+		Cursus\Examenopdracht.docx = Cursus\Examenopdracht.docx
 		Cursus\Post Corona planning.pdf = Cursus\Post Corona planning.pdf
 	EndProjectSection
 EndProject
@@ -68,9 +69,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfDataBindingDemo", "WpfDa
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-LINQ", "5-LINQ", "{FBA08702-07D4-4370-9D2F-27B7EDA56498}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Country.Data", "Country.Data\Country.Data.csproj", "{A27B50FC-B728-4530-9DA4-1A38E8BF44FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Country.Data", "Country.Data\Country.Data.csproj", "{A27B50FC-B728-4530-9DA4-1A38E8BF44FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqLambdaDemo", "LinqLambdaDemo\LinqLambdaDemo.csproj", "{3B220F52-5285-4FE3-8EDF-21051730623D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqLambdaDemo", "LinqLambdaDemo\LinqLambdaDemo.csproj", "{3B220F52-5285-4FE3-8EDF-21051730623D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
